@@ -1,3 +1,9 @@
-<div class="card flex justify-content-center">
-  <p-button label="Check" icon="pi pi-check"></p-button>
+
+<p-menubar [model]="items"></p-menubar>
+
+<div class="app-container">
+  <div class="card my-5 flex justify-content-center">
+    <p-button label="Check" icon="pi pi-check"></p-button>
+  </div>
+  <router-outlet></router-outlet>
 </div>
