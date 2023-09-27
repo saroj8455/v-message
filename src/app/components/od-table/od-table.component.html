@@ -1,0 +1,88 @@
+<div class="page-content" style="height: calc(100vh - 149px)">
+  <h2 style="color: green">GeeksforGeeks</h2>
+  <h4>Angular PrimeNG Table Responsive</h4>
+  <!--  responsiveLayout="scroll | stack"-->
+  <p-table
+    responsiveLayout="stack"
+    [value]="tableData"
+    scrollHeight="flex">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+    </ng-template>
+
+    <ng-template
+      pTemplate="body"
+      let-rowData="rowData"
+      let-people
+      sortMode="multiple">
+
+      <tr>
+        <td>
+          <span
+            class="p-column-title">
+              First Name
+          </span>
+          {{ people.firstname }}
+        </td>
+        <td>
+          <span
+            class="p-column-title">
+              last Name
+          </span>
+          {{ people.lastname }}
+        </td>
+        <td>
+          <span
+            class="p-column-title">
+              Age
+          </span>
+          {{ people.age }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-divider></p-divider>
+<div class="page-content" style="height: calc(100vh - 149px)">
+  <div class="card py-4">
+    <h2 style="color: green">Flipkart</h2>
+    <h4>Angular PrimeNG Table Responsive</h4>
+  </div>
+  <div class="card">
+    <p-table responsiveLayout="stack"
+             [paginator]="true"
+             [rows]="10"
+             [showCurrentPageReport]="true"
+             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+             [rowsPerPageOptions]="[10, 25, 50]"
+             [columns]="selectedColumns"
+             [value]="products" scrollHeight="flex">
+      <ng-template pTemplate="caption">
+        <p-multiSelect [options]="colsp" [(ngModel)]="_selectedColumns" optionLabel="header"
+                       selectedItemsLabel="{0} columns selected" [style]="{'min-width': '200px'}"
+                       placeholder="Choose Columns"></p-multiSelect>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th>Code</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData="rowData" sortMode="multiple" let-product let-columns="columns">
+        <tr>
+          <td>{{product.code}}</td>
+          <td *ngFor="let col of columns">
+            <span class="p-column-title">{{col.header}}</span>
+            {{product[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

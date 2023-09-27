@@ -16,6 +16,9 @@ import {ToastModule} from "primeng/toast";
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 import { TimelineModule } from 'primeng/timeline';
+import { TableModule } from 'primeng/table';
+import {MultiSelectModule} from "primeng/multiselect";
+
 @NgModule({
   declarations: [],
   exports: [
@@ -35,7 +38,9 @@ import { TimelineModule } from 'primeng/timeline';
     ToastModule,
     PanelModule,
     DialogModule,
-    TimelineModule
+    TimelineModule,
+    TableModule,
+    MultiSelectModule
   ]
 })
 export class PrimeModule { }

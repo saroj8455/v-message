@@ -8,10 +8,17 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { OdTableComponent } from './components/od-table/od-table.component';
+import { ErrorCompComponent } from './components/error-comp/error-comp.component';
+import { HomeComponent } from './components/home/home.component';
+import {ProductService} from "./service/productservice";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OdTableComponent,
+    ErrorCompComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     PrimeModule,
     HttpClientModule
   ],
-  providers: [MessageService],
+  providers: [MessageService,ProductService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA]
 })

@@ -89,6 +89,7 @@ export class AppComponent  implements OnInit{
       {
         label: 'File',
         icon: 'pi pi-fw pi-file',
+        routerLink:"/od-table",
         items: [
           {
             label: 'New',
