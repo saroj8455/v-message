@@ -87,9 +87,13 @@ export class AppComponent  implements OnInit{
   initNavbarMenu() {
     this.items_menu = [
       {
+        label:"Home",
+        icon:"pi pi-fw pi-home",
+        routerLink:"/home"
+      },
+      {
         label: 'File',
         icon: 'pi pi-fw pi-file',
-        routerLink:"/od-table",
         items: [
           {
             label: 'New',
@@ -203,6 +207,11 @@ export class AppComponent  implements OnInit{
             ],
           },
         ],
+      },
+      {
+        label: 'Table',
+        icon: 'pi pi-fw pi-table',
+        routerLink:"/od-table"
       },
       {
         label: 'Quit',
