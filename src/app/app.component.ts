@@ -214,6 +214,11 @@ export class AppComponent  implements OnInit{
         routerLink:"/od-table"
       },
       {
+        label: 'Order',
+        icon: 'pi pi-fw pi-pencil',
+        routerLink:"/create-od"
+      },
+      {
         label: 'Quit',
         icon: 'pi pi-fw pi-power-off',
       },

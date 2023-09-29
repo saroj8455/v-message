@@ -1,0 +1,147 @@
+<!--<div class="card ">-->
+<!--  <h1 class="text-2xl">Shipment</h1>-->
+<!--</div>-->
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-6">
+    <h1 class="text-2xl pb-2">Pickup Address</h1>
+    <p-divider></p-divider>
+    <div class="card flex gap-5 flex-column py-3">
+      <div class="card flex justify-content-center">
+        <p-button label="Select Warehouse"></p-button>
+      </div>
+      <span class="p-float-label w-full">
+          <p-inputNumber class="w-full" inputId="integeronly" [(ngModel)]="orderNumber">
+          </p-inputNumber>
+          <label htmlFor="number-input">Order Number</label>
+      </span>
+      <span class="p-float-label w-full">
+        <input class="w-full" pInputText id="username" [(ngModel)]="name" />
+        <label htmlFor="username">Name</label>
+      </span>
+      <span class="p-float-label w-full">
+          <textarea
+            id="float-input"
+            class="w-full"
+            rows="5"
+            cols="30"
+            [(ngModel)]="addressLine1"
+            [autoResize]="true"
+            pInputTextarea
+          ></textarea>
+          <label for="float-input">Address Line 1</label>
+        </span>
+      <span class="p-float-label w-full">
+          <textarea
+            id="float-input"
+            class="w-full"
+            rows="5"
+            cols="30"
+            [(ngModel)]="addressLine2"
+            [autoResize]="true"
+            pInputTextarea
+          ></textarea>
+          <label for="float-input">Address Line 2</label>
+        </span>
+      <span class="p-float-label w-full">
+          <input class="w-full" pInputText id="landMark" [(ngModel)]="landMark" />
+          <label htmlFor="landMark">Land Mark</label>
+      </span>
+      <span class="p-float-label w-full">
+          <p-inputNumber class="w-full" inputId="integeronly" [(ngModel)]="pincode">
+          </p-inputNumber>
+          <label htmlFor="number-input">Pincode</label>
+      </span>
+      <span class="p-float-label w-full">
+          <input pInputText class="w-full" id="state" [(ngModel)]="state" />
+          <label htmlFor="state">State</label>
+      </span>
+      <span class="p-float-label w-full">
+          <input pInputText class="w-full" id="city" [(ngModel)]="city" />
+          <label htmlFor="city">City</label>
+      </span>
+      <span class="p-float-label w-full">
+          <p-inputMask
+            id="mobileNumber"
+            mask="9999-999-999"
+            class="w-full"
+            [(ngModel)]="mobileNumber"
+            placeholder="9999-999-999"
+          ></p-inputMask>
+          <label htmlFor="mobileNumber">Mobile</label>
+      </span>
+    </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-6">
+    <h1 class="text-2xl pb-2">Delivery Address</h1>
+    <p-divider></p-divider>
+    <div
+      class="card flex gap-5 flex-column align-items-center justify-content-center align-content-center py-3"
+    >
+      <div class="card flex justify-content-center">
+        <p-button label="Select Drop Location" styleClass="p-button-success"></p-button>
+      </div>
+      <span class="p-float-label w-full">
+        <input class="w-full" pInputText id="customerName" [(ngModel)]="customerName" />
+        <label htmlFor="customerName">Customer Name</label>
+      </span>
+
+      <span class="p-float-label w-full">
+        <input class="w-full" pInputText id="dLandmark" [(ngModel)]="dLandmark" />
+        <label htmlFor="dLandmark">Land Mark</label>
+      </span>
+      <span class="p-float-label w-full">
+          <textarea
+            id="float-input"
+            class="w-full"
+            rows="5"
+            cols="30"
+            [(ngModel)]="addressLine1"
+            [autoResize]="true"
+            pInputTextarea
+          ></textarea>
+          <label for="float-input">Address Line 1</label>
+        </span>
+      <span class="p-float-label w-full">
+          <textarea
+            id="float-input"
+            class="w-full"
+            rows="5"
+            cols="30"
+            [(ngModel)]="addressLine2"
+            [autoResize]="true"
+            pInputTextarea
+          ></textarea>
+          <label for="float-input">Address Line 2</label>
+        </span>
+      <span class="p-float-label w-full">
+          <input class="w-full" pInputText id="landMark" [(ngModel)]="landMark" />
+          <label htmlFor="landMark">Land Mark</label>
+      </span>
+      <span class="p-float-label w-full">
+          <p-inputNumber class="w-full" inputId="integeronly" [(ngModel)]="pincode">
+          </p-inputNumber>
+          <label htmlFor="number-input">Pincode</label>
+      </span>
+      <span class="p-float-label w-full">
+          <input pInputText class="w-full" id="state" [(ngModel)]="state" />
+          <label htmlFor="state">State</label>
+      </span>
+      <span class="p-float-label w-full">
+          <input pInputText class="w-full" id="city" [(ngModel)]="city" />
+          <label htmlFor="city">City</label>
+      </span>
+      <span class="p-float-label w-full">
+          <p-inputMask
+            id="mobileNumber"
+            mask="9999-999-999"
+            class="w-full"
+            [(ngModel)]="mobileNumber"
+            placeholder="9999-999-999"
+          ></p-inputMask>
+          <label htmlFor="mobileNumber">Mobile</label>
+      </span>
+    </div>
+  </div>
+</div>
+

@@ -18,7 +18,9 @@ import { DialogModule } from 'primeng/dialog';
 import { TimelineModule } from 'primeng/timeline';
 import { TableModule } from 'primeng/table';
 import {MultiSelectModule} from "primeng/multiselect";
-
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputMaskModule } from 'primeng/inputmask';
 @NgModule({
   declarations: [],
   exports: [
@@ -40,7 +42,10 @@ import {MultiSelectModule} from "primeng/multiselect";
     DialogModule,
     TimelineModule,
     TableModule,
-    MultiSelectModule
+    MultiSelectModule,
+    InputNumberModule,
+    InputTextareaModule,
+    InputMaskModule
   ]
 })
 export class PrimeModule { }
