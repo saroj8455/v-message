@@ -9,7 +9,8 @@
     "build-app": "ng build && npx cap sync",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "push": "ng build --base-href \"https://saroj8455.github.io/v-message/index.html\" && npx angular-cli-ghpages --dir=dist/v-message "
   },
   "private": true,
   "dependencies": {

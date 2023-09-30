@@ -1,0 +1,17 @@
+/*p-inputnumber taking 100% full width of the app*/
+:host ::ng-deep .p-inputnumber, .p-inputtext {
+  width: 100% !important;
+}
+
+/*p-inputtext as full width */
+:host ::ng-deep  .p-inputtext {
+ width: 100% !important;
+}
+
+/*p-inputtext as full width */
+:host ::ng-deep  .p-inputwrapper {
+  width: 100% !important;
+ }
+ :host ::ng-deep  .p-dropdown {
+  width: 100% !important;
+ }

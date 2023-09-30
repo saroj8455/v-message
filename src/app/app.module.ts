@@ -16,6 +16,7 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
 import { SteperFormComponent } from './components/steper-form/steper-form.component';
 import { PickupComponent } from './components/form/pickup/pickup.component';
 import { DeliveryComponent } from './components/form/delivery/delivery.component';
+import { CalcShippingComponent } from './components/calc-shipping/calc-shipping.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DeliveryComponent } from './components/form/delivery/delivery.component
     CreateOrderComponent,
     SteperFormComponent,
     PickupComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    CalcShippingComponent
   ],
   imports: [
     BrowserModule,
