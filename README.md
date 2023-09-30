@@ -27,8 +27,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-## Convert angular app to mobile app 
+## Convert angular app to mobile app
 https://capacitorjs.com/docs/getting-started
 
 
 ## GithubPages https://saroj8455.github.io/v-message/
+
+## Fix refresh issue 404 not found
+ng build  --base-href "https://saroj8455.github.io/v-message/index.html" <br/>
+npx angular-cli-ghpages --dir=dist/v-message
+
+## After that check the latest build and navigate to url
+
