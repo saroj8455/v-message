@@ -21,6 +21,8 @@ import {MultiSelectModule} from "primeng/multiselect";
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputMaskModule } from 'primeng/inputmask';
+import { StepsModule } from 'primeng/steps';
+import {DropdownModule} from "primeng/dropdown";
 @NgModule({
   declarations: [],
   exports: [
@@ -45,7 +47,9 @@ import { InputMaskModule } from 'primeng/inputmask';
     MultiSelectModule,
     InputNumberModule,
     InputTextareaModule,
-    InputMaskModule
+    InputMaskModule,
+    StepsModule,
+    DropdownModule
   ]
 })
 export class PrimeModule { }

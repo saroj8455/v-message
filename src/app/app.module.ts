@@ -13,6 +13,9 @@ import { ErrorCompComponent } from './components/error-comp/error-comp.component
 import { HomeComponent } from './components/home/home.component';
 import {ProductService} from "./service/productservice";
 import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { SteperFormComponent } from './components/steper-form/steper-form.component';
+import { PickupComponent } from './components/form/pickup/pickup.component';
+import { DeliveryComponent } from './components/form/delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
     OdTableComponent,
     ErrorCompComponent,
     HomeComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    SteperFormComponent,
+    PickupComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
