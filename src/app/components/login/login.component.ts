@@ -26,13 +26,13 @@ export class LoginComponent {
   constructor(private messageService: MessageService) {}
 
   shippingAuth() {
+
     if(this.userauth.username.trim().toString().length <= 0 || this.userauth.password.trim().length <= 0 ) {
       this.visible = true;
       return;
     }
-    this.inProgress = true
     if(this.userauth.username.trim().toString() === "a") {
-
+      this.inProgress = true
       setTimeout(()=>{
         this.inProgress = false
         this.messageService.add({ severity: 'success', summary: 'Success', detail: `Login Successful : ${this.userauth.username} ` });
