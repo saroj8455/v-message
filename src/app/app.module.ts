@@ -20,6 +20,9 @@ import { CalcShippingComponent } from './components/calc-shipping/calc-shipping.
 import { ProductShowcaseComponent } from './components/product-showcase/product-showcase.component';
 import { OdTimeComponent } from './components/od-time/od-time.component';
 import { DemoCompComponent } from './components/demo-comp/demo-comp.component';
+import { LoginComponent } from './components/login/login.component';
+import { HeadingMsgComponent } from './components/common/heading-msg/heading-msg.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { DemoCompComponent } from './components/demo-comp/demo-comp.component';
     CalcShippingComponent,
     ProductShowcaseComponent,
     OdTimeComponent,
-    DemoCompComponent
+    DemoCompComponent,
+    LoginComponent,
+    HeadingMsgComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
