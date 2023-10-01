@@ -23,6 +23,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputMaskModule } from 'primeng/inputmask';
 import { StepsModule } from 'primeng/steps';
 import {DropdownModule} from "primeng/dropdown";
+import { PasswordModule } from 'primeng/password';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 
 @NgModule({
@@ -51,7 +53,10 @@ import {DropdownModule} from "primeng/dropdown";
     InputTextareaModule,
     InputMaskModule,
     StepsModule,
-    DropdownModule
+    DropdownModule,
+    PasswordModule,
+    ProgressBarModule,
+    DialogModule
   ]
 })
 export class PrimeModule { }
