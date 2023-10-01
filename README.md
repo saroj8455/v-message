@@ -39,3 +39,24 @@ npx angular-cli-ghpages --dir=dist/v-message
 
 ## After that check the latest build and navigate to url
 
+
+## Deployee angular app into hostinger shared hosting
+https://www.hostinger.in/tutorials/how-to-deploy-angular-app-on-shared-hosting <br>
+https://www.youtube.com/watch?v=-7s_dR9hYqU&t=2s<br>
+https://medium.com/@shahidhkhan/create-a-new-angular-project-and-publish-it-to-
+
+
+## npm run build , copy the assets to root of the domain e.g.
+
+https://ocembalangir.in/v-message/ to https://ocembalangir.in/v-message/assets/ <br>
+
+
+## Don't edit the base href in index.html
+
+## .htaccess
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_METHOD} !OPTIONS
+RewriteRule ^(.*)$ index.html [L]
