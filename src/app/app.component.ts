@@ -88,12 +88,13 @@ export class AppComponent  implements OnInit{
         routerLink:"/home"
       },
       {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
+        label: 'User',
+        icon: 'pi pi-fw pi-user',
         items: [
           {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left',
+            label: 'Sign In',
+            icon: 'pi pi-fw pi-lock',
+            routerLink:"/sign-in"
           },
           {
             label: 'Right',
