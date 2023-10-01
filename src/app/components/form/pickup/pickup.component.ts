@@ -13,7 +13,7 @@ export class PickupComponent {
   }
 
   nextPage() {
-      this.router.navigate(['delivery-fm']);
+      this.router.navigate(['home/delivery-fm']);
     }
 
 }

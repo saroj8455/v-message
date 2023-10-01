@@ -9,18 +9,19 @@ import {DeliveryComponent} from "./components/form/delivery/delivery.component";
 import { DemoCompComponent } from './components/demo-comp/demo-comp.component';
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 const routes: Routes = [
-  {path:"",redirectTo:"home", pathMatch:"full"},
-  {path:"home",component:HomeComponent},
-  {path:"demo-comp",component:DemoCompComponent,
+  {path:"home",component:HomeComponent,
   children:[
     {path:"pickup-fm",component:PickupComponent},
     {path:"delivery-fm",component:DeliveryComponent},
   ]
 },
-  {path:"od-table",component:OdTableComponent},
-  {path:"create-od",component:CreateOrderComponent},
-  // {path:"pickup-fm",component:PickupComponent},
-  // {path:"delivery-fm",component:DeliveryComponent},
+{path:"demo-comp",component:DemoCompComponent
+},
+{path:"od-table",component:OdTableComponent},
+{path:"create-od",component:CreateOrderComponent},
+// {path:"pickup-fm",component:PickupComponent},
+// {path:"delivery-fm",component:DeliveryComponent},
+{path:"",redirectTo:"home", pathMatch:"full"},
   {path:"**",component:ErrorCompComponent}
 ];
 
