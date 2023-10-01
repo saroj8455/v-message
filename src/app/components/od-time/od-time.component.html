@@ -1,0 +1,10 @@
+<!-- Time Line Component -->
+<div class="app-container">
+  <div class="card my-3">
+    <p-timeline [value]="events" layout="horizontal" align="bottom">
+      <ng-template pTemplate="content" let-event>
+        {{ event.status }}
+      </ng-template>
+    </p-timeline>
+  </div>
+</div>

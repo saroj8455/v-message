@@ -17,6 +17,9 @@ import { SteperFormComponent } from './components/steper-form/steper-form.compon
 import { PickupComponent } from './components/form/pickup/pickup.component';
 import { DeliveryComponent } from './components/form/delivery/delivery.component';
 import { CalcShippingComponent } from './components/calc-shipping/calc-shipping.component';
+import { ProductShowcaseComponent } from './components/product-showcase/product-showcase.component';
+import { OdTimeComponent } from './components/od-time/od-time.component';
+import { DemoCompComponent } from './components/demo-comp/demo-comp.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CalcShippingComponent } from './components/calc-shipping/calc-shipping.
     SteperFormComponent,
     PickupComponent,
     DeliveryComponent,
-    CalcShippingComponent
+    CalcShippingComponent,
+    ProductShowcaseComponent,
+    OdTimeComponent,
+    DemoCompComponent
   ],
   imports: [
     BrowserModule,

@@ -30,7 +30,7 @@ export class AppComponent  implements OnInit{
   products:IProduct[]=[]
   priceRange:number = 10;
   visible: boolean = false;
-  events: any[];
+
   items: MenuItem[] = [
     {
       icon: 'pi pi-pencil',
@@ -62,12 +62,7 @@ export class AppComponent  implements OnInit{
   ];
 
   constructor(private http:HttpClient,private messageService: MessageService) {
-    this.events = [
-      { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0', image: 'game-controller.jpg' },
-      { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
-      { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
-      { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
-    ];
+
   }
 
   ngOnInit(): void {
@@ -93,37 +88,6 @@ export class AppComponent  implements OnInit{
         routerLink:"/home"
       },
       {
-        label: 'File',
-        icon: 'pi pi-fw pi-file',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-plus',
-            items: [
-              {
-                label: 'Bookmark',
-                icon: 'pi pi-fw pi-bookmark',
-              },
-              {
-                label: 'Video',
-                icon: 'pi pi-fw pi-video',
-              },
-            ],
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash',
-          },
-          {
-            separator: true,
-          },
-          {
-            label: 'Export',
-            icon: 'pi pi-fw pi-external-link',
-          },
-        ],
-      },
-      {
         label: 'Edit',
         icon: 'pi pi-fw pi-pencil',
         items: [
@@ -142,40 +106,6 @@ export class AppComponent  implements OnInit{
           {
             label: 'Justify',
             icon: 'pi pi-fw pi-align-justify',
-          },
-        ],
-      },
-      {
-        label: 'Users',
-        icon: 'pi pi-fw pi-user',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-user-plus',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-user-minus',
-          },
-          {
-            label: 'Search',
-            icon: 'pi pi-fw pi-users',
-            items: [
-              {
-                label: 'Filter',
-                icon: 'pi pi-fw pi-filter',
-                items: [
-                  {
-                    label: 'Print',
-                    icon: 'pi pi-fw pi-print',
-                  },
-                ],
-              },
-              {
-                icon: 'pi pi-fw pi-bars',
-                label: 'List',
-              },
-            ],
           },
         ],
       },
@@ -213,6 +143,11 @@ export class AppComponent  implements OnInit{
         label: 'Table',
         icon: 'pi pi-fw pi-table',
         routerLink:"/od-table"
+      },
+      {
+        label: 'Demo',
+        icon: 'pi pi-fw pi-box',
+        routerLink:"/demo-comp"
       },
       {
         label: 'Order',
