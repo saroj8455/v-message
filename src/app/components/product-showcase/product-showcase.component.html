@@ -1,18 +1,31 @@
 <div class="app-container">
   <div class="card my-5 flex gap-3 align-items-center align-content-center">
-    <p-button label="Check"  icon="pi pi-check"></p-button>
+    <p-button label="Check" icon="pi pi-check"></p-button>
     <div class="card flex justify-content-center">
-      <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-      <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+      <p-button
+        (click)="showDialog()"
+        icon="pi pi-external-link"
+        label="Show"
+      ></p-button>
+      <p-dialog
+        header="Header"
+        [(visible)]="visible"
+        [style]="{ width: '50vw' }"
+      >
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </p-dialog>
     </div>
     <div class="card flex justify-content-center">
       <div class="flex align-content-center align-items-center gap-3">
-        <input type="text" pInputText [(ngModel)]="priceRange" class="w-full"/>
+        <input type="text" pInputText [(ngModel)]="priceRange" class="w-full" />
         <p-slider [(ngModel)]="priceRange" class="w-full"></p-slider>
       </div>
     </div>
@@ -20,18 +33,26 @@
   <div class="card">
     <div class="card flex">
       <span class="p-input-icon-left w-full">
-      <i class="pi pi-search"></i>
-      <input class="w-full" type="text" pInputText pAutoFocus [autofocus]="true" placeholder="Search product here"  />
+        <i class="pi pi-search"></i>
+        <input
+          class="w-full"
+          (click)="searchProduct()"
+          type="text"
+          pInputText
+          pAutoFocus
+          [autofocus]="true"
+          placeholder="Search product here"
+        />
       </span>
     </div>
   </div>
-<!--  <p-divider></p-divider>-->
+  <p-divider></p-divider>
   <div class="card my-3">
     <div class="card flex gap-3 flex-wrap justify-content-center">
       <div class="card" *ngFor="let prod of products;index as i;">
         <p-card [header]="prod.title" [subheader]="prod.category" [style]="{ width: '360px' }">
           <ng-template pTemplate="header">
-            <img class="p-5"  alt="Card" [src]="prod.image" />
+            <img class="p-5" style="max-width: fit-content;;"  alt="Card" [src]="prod.image" />
           </ng-template>
           <div class="card flex align-items-center justify-content-between py-3">
             <div class="flex gap-2 align-items-center justify-content-center ">
@@ -59,12 +80,65 @@
     </div>
 
   </div>
-<!--  <router-outlet></router-outlet>-->
+  <!-- temp place for router outlet -->
+  <!--  <router-outlet></router-outlet>-->
 </div>
 <p-divider></p-divider>
-<div class="card flex justify-content-center align-items-center">
+ <div class="card flex justify-content-center align-items-center">
   <div style="height: 500px; position: relative;"  class="ml-7 speeddial-circle-demo">
     <p-toast position="top-center"></p-toast>
     <p-speedDial  [model]="items" [radius]="120" direction="up-left" type="quarter-circle" buttonClassName="p-button-success"></p-speedDial>
   </div>
 </div>
+
+<!-- Todo Housing List Render  -->
+<p-table
+  [value]="housingLocationList"
+  responsiveLayout="stack"
+  [paginator]="true"
+  [rows]="5"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [rowsPerPageOptions]="[10, 25, 50]"
+>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Units</th>
+      <th>Avilable Status</th>
+      <th>Rating</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-housing let-columns="columns">
+    <tr>
+      <td><span class="p-column-title">Code</span>{{ housing.id }}</td>
+      <td><span class="p-column-title">Name</span>{{ housing.name }}</td>
+      <td><span class="p-column-title">City</span>{{ housing.city }}</td>
+      <td><span class="p-column-title">Units</span>{{ housing.availableUnits }}</td>
+      <td>
+        <span class="p-column-title">Avilable Status</span>
+        <p-tag
+          [value]="checkAvl(housing.avilability)"
+          [severity]="getSeverity(housing.avilability)"
+        ></p-tag>
+      </td>
+      <td>
+        <span class="p-column-title">Reviews</span
+        ><p-rating
+          [ngModel]="housing.rating"
+          [readonly]="true"
+          [cancel]="false"
+        ></p-rating>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      In total there are
+      {{ housingLocationList ? housingLocationList.length : 0 }} housing
+      property.
+    </div>
+  </ng-template>
+</p-table>

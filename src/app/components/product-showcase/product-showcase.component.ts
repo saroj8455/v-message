@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
+import { IHouseLocation } from 'src/app/model/housing-location';
+import { HousingService } from 'src/app/service/housing.service';
 
 
 export interface IProduct {
@@ -18,6 +20,11 @@ export interface Rating {
   count: number
 }
 
+interface Column {
+  field: string;
+  header: string;
+}
+
 
 @Component({
   selector: 'app-product-showcase',
@@ -30,6 +37,9 @@ export class ProductShowcaseComponent implements OnInit {
   products:IProduct[]=[]
   priceRange:number = 10;
   visible: boolean = false;
+
+  housingLocationList: IHouseLocation[] = [];
+  cols!: Column[];
 
   items: MenuItem[] = [
     {
@@ -60,7 +70,7 @@ export class ProductShowcaseComponent implements OnInit {
       url: 'http://angular.io'
     }
   ];
-  constructor(private http:HttpClient,private messageService: MessageService) {
+  constructor(private http:HttpClient,private messageService: MessageService,private housing:HousingService) {
 
   }
 
@@ -68,6 +78,17 @@ export class ProductShowcaseComponent implements OnInit {
     this.getProducts().subscribe((resp)=>{
       this.products = resp
     })
+    this.housing.getAllHousingLocations().subscribe((resp=>{
+      this.housingLocationList = resp;
+    }))
+    this.cols = [
+      { field: 'id', header: 'Code' },
+      { field: 'name', header: 'Name' },
+      { field: 'city', header: 'City' },
+      { field: 'availableUnits', header: 'Units' },
+      { field: 'avilability', header: 'Avilable Status' },
+      { field: 'rating', header: 'Rating' }
+  ];
   }
 
   getProducts() {
@@ -76,5 +97,15 @@ export class ProductShowcaseComponent implements OnInit {
 
   showDialog() {
     this.visible = true;
+  }
+  searchProduct() {
+    console.log("Hi");
+
+  }
+  checkAvl(avilability:boolean) {
+    return avilability ? "TO LET" : "NOT AVILABLE"
+  }
+  getSeverity(avilability:boolean) {
+    return avilability ? "success" : "danger";
   }
 }
