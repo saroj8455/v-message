@@ -26,7 +26,9 @@ import {DropdownModule} from "primeng/dropdown";
 import { PasswordModule } from 'primeng/password';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { TagModule } from 'primeng/tag';
-
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { KnobModule } from 'primeng/knob';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 @NgModule({
   declarations: [],
   exports: [
@@ -57,7 +59,10 @@ import { TagModule } from 'primeng/tag';
     PasswordModule,
     ProgressBarModule,
     DialogModule,
-    TagModule
+    TagModule,
+    InputSwitchModule,
+    KnobModule,
+    ToggleButtonModule
   ]
 })
 export class PrimeModule { }

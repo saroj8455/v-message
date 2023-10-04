@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
 import { IHouseLocation } from 'src/app/model/housing-location';
 import { HousingService } from 'src/app/service/housing.service';
@@ -37,9 +37,15 @@ export class ProductShowcaseComponent implements OnInit {
   products:IProduct[]=[]
   priceRange:number = 10;
   visible: boolean = false;
+  openHousingModalPopup: boolean = false;
 
   housingLocationList: IHouseLocation[] = [];
+  selectHouse!:IHouseLocation;
+  _selectedColumns!: Column[];
+  availableUnits =0
   cols!: Column[];
+  checked = true;
+  value: number = 0;
 
   items: MenuItem[] = [
     {
@@ -89,6 +95,16 @@ export class ProductShowcaseComponent implements OnInit {
       { field: 'avilability', header: 'Avilable Status' },
       { field: 'rating', header: 'Rating' }
   ];
+  this._selectedColumns = this.cols;
+  }
+
+  @Input() get selectedColumns(): any[] {
+    return this._selectedColumns;
+  }
+
+  set selectedColumns(val: any[]) {
+    //restore original order
+    this._selectedColumns = this.cols.filter((col) => val.includes(col));
   }
 
   getProducts() {
@@ -108,4 +124,23 @@ export class ProductShowcaseComponent implements OnInit {
   getSeverity(avilability:boolean) {
     return avilability ? "success" : "danger";
   }
+  openHousingModal(housing:IHouseLocation) {
+    this.selectHouse = housing;
+    this.availableUnits = housing.availableUnits;
+    this.value = housing.rating as number;
+    this.openHousingModalPopup = !this.openHousingModalPopup
+  }
+
+  // getRating(housing:IHouseLocation) {
+  //   this.value = housing.rating as number;
+  // }
+  extractIdGoogle() {
+    const gdriveUrl = "https://drive.google.com/file/d/1Fs4PFEQQYzkIVGpOfMJFspO70TIDrWNP/view?usp=sharing"
+    const gdriveUrl2 = "https://drive.google.com/file/d/1oAS3w0TGQjdDFyouOcY05hwy1bpjCVhv/view?usp=sharing"
+    const splite = gdriveUrl.split("/")
+    const split2 = gdriveUrl2.split("/")
+    console.log(split2[5]);
+  }
+
+
 }
